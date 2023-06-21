@@ -1,0 +1,26 @@
+.visited-countries-images {
+  height: 180px;
+}
+
+.visited-countries-container {
+  padding: 10px;
+}
+
+.name {
+  color: #ffffff;
+}
+
+.remove-button {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #ffffff;
+  padding: 5px 10px 5px 10px;
+  height: 30px;
+  margin-top: 15px;
+}
+
+.name-button-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}

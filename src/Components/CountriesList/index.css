@@ -1,0 +1,45 @@
+.name-visited-container {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  max-height: 400px;
+}
+
+.click-button {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 40px;
+  color: #cbd5e1;
+  width: 80px;
+  border-radius: 10px;
+  border-color: transparent;
+}
+
+.un-click-button {
+  background-color: blue;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 40px;
+  color: #ffffff;
+  width: 80px;
+  border-radius: 10px;
+  border-color: transparent;
+}
+
+.list-name-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.name-countries {
+  color: #ffffff;
+}
+
+.line {
+  color: #ffffff;
+  width: 100%;
+}

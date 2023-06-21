@@ -1,0 +1,26 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #161624;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+.countries-head {
+  color: #ffffff;
+}
+
+.countries-list-container {
+  scroll-padding-right: 20px;
+  padding: 20px;
+  background-color: #334155;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.countries-Visited-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
