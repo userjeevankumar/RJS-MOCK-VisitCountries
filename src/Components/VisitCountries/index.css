@@ -24,3 +24,7 @@
   flex-wrap: wrap;
   flex-direction: row;
 }
+
+.head-visited {
+  color: #ffffff;
+}

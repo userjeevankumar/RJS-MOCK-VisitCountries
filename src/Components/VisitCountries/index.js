@@ -78,22 +78,20 @@ const initialCountriesList = [
 ]
 
 class VisitCountries extends Component {
-  state = {initialVisitedCountriesList: initialCountriesList, visitedList: []}
+  state = {initialVisitedCountriesList: initialCountriesList}
 
   componentDidMount = () => {
-    const {initialVisitedCountriesList} = this.state
-    const userChoiceObjectList = initialVisitedCountriesList.filter(
-      choice => choice.isVisited === true,
-    )
-    this.setState({visitedList: userChoiceObjectList})
+    this.renderCountries()
+    this.render()
   }
 
   changeVisitedList = id => {
+    this.componentDidMount()
     this.setState(prevState => ({
       initialVisitedCountriesList: prevState.initialVisitedCountriesList.map(
         eachCountry => {
           if (id === eachCountry.id) {
-            return {...eachCountry, isVisited: !eachCountry.iVisited}
+            return {...eachCountry, isVisited: !eachCountry.isVisited}
           }
           return eachCountry
         },
@@ -120,17 +118,28 @@ class VisitCountries extends Component {
   }
 
   renderCountries = () => {
-    const {visitedList} = this.state
+    const {initialVisitedCountriesList} = this.state
+    const userChoiceObjectList = initialVisitedCountriesList.filter(
+      choice => choice.isVisited === true,
+    )
     return (
-      <ul className="countries-Visited-list-container">
-        {visitedList.map(eachItem => (
-          <CountriesVisitedList
-            key={eachItem.id}
-            changeVisitedList={this.changeVisitedList}
-            countriesVisited={eachItem}
-          />
-        ))}
-      </ul>
+      <div>
+        {userChoiceObjectList.length === 0 ? (
+          <div>
+            <p className="no-countries">No Countries Visited Yet</p>
+          </div>
+        ) : (
+          <ul className="countries-Visited-list-container">
+            {userChoiceObjectList.map(eachItem => (
+              <CountriesVisitedList
+                key={eachItem.id}
+                changeVisitedList={this.changeVisitedList}
+                countriesVisited={eachItem}
+              />
+            ))}
+          </ul>
+        )}
+      </div>
     )
   }
 
@@ -151,7 +160,7 @@ class VisitCountries extends Component {
           </ul>
         </div>
         <div>
-          <h1>Visited Countries</h1>
+          <h1 className="head-visited">Visited Countries</h1>
           {this.renderCountries()}
         </div>
       </div>

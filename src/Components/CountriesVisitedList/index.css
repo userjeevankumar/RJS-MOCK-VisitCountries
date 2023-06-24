@@ -24,3 +24,7 @@
   justify-content: space-between;
   flex-direction: row;
 }
+
+.no-countries {
+  color: #ffffff;
+}
